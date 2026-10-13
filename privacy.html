@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizlilik Politikası · Vertical Clip Studio</title>
+  <meta name="description" content="Vertical Clip Studio gizlilik politikası: hangi verilerin işlendiği, Google Drive erişimi ve verilerin silinmesi." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./">Vertical Clip Studio</a>
+      <nav><a href="./">Ana sayfa</a><a href="terms.html">Koşullar</a></nav>
+    </header>
+
+    <div class="lang"><a href="#tr">Türkçe</a><a href="#en">English</a></div>
+
+    <section id="tr">
+      <h1>Gizlilik Politikası</h1>
+      <p class="muted">Yürürlük tarihi: 13 Ekim 2026</p>
+      <p>Bu politika, Vertical Clip Studio masaüstü uygulamasının ("uygulama") hangi bilgileri nasıl işlediğini açıklar.
+        Uygulama bir video düzenleyicidir; videoların, projelerin ve düzenleme işlemlerin bilgisayarında yapılır.</p>
+
+      <h2>1. Hesap bilgileri</h2>
+      <p>Uygulamaya girmek için bir hesap gerekir. Hesap hizmeti <strong>Supabase</strong> (kimlik doğrulama ve veritabanı
+        altyapısı) üzerinde çalışır. Saklanan bilgiler:</p>
+      <ul>
+        <li>E-posta adresin; Google ile girdiysen Google hesabındaki adın ve profil fotoğrafının adresi.</li>
+        <li>E-posta ve şifreyle kayıt olduysan şifren; şifre Supabase tarafından yalnızca geri döndürülemez biçimde (hash)
+          saklanır, uygulama ve geliştirici şifreni göremez.</li>
+        <li>Hesabın oluşturulma tarihi ve giriş yöntemi (e-posta ya da Google).</li>
+      </ul>
+      <p>Oturum bilgisi bilgisayarında, işletim sisteminin anahtar deposuyla şifrelenmiş olarak saklanır.</p>
+
+      <h2>2. Google ile giriş ve Google Drive</h2>
+      <p>Google ile girdiğinde uygulama Google'dan şu izinleri ister:</p>
+      <ul>
+        <li><strong>Temel profil ve e-posta</strong> (<code>openid</code>, <code>email</code>, <code>profile</code>):
+          hesabını oluşturmak ve seni tanımak için.</li>
+        <li><strong>Google Drive – yalnızca bu uygulamanın dosyaları</strong> (<code>drive.file</code>): projelerini
+          Drive'ına kaydetmek ve başka bilgisayarlardan açmak için. Bu izinle uygulama <strong>yalnızca kendi oluşturduğu
+          dosyaları</strong> (Drive'ındaki "Vertical Clip Studio" klasöründeki <code>.vcsproj</code> proje dosyaları)
+          görebilir, okuyabilir, güncelleyebilir ve çöp kutusuna taşıyabilir. Drive'ındaki diğer dosyalara erişemez.</li>
+      </ul>
+      <p>Drive'a yalnızca <strong>proje dosyası</strong> (zaman çizelgesi, altyazılar, ayarlar ve videolarının
+        bilgisayarındaki dosya yolları) yüklenir. <strong>Video ve ses dosyaların Drive'a ya da başka bir sunucuya
+        yüklenmez.</strong></p>
+      <p>Google'ın verdiği erişim belirteçleri bilgisayarında, işletim sisteminin anahtar deposuyla şifrelenmiş olarak
+        saklanır. Erişim yaklaşık saatte bir yenilenir; yenileme, Google'ın gerektirdiği uygulama anahtarı bilgisayarına
+        konmasın diye bir Supabase sunucu fonksiyonu üzerinden yapılır. Bu fonksiyon yalnızca yenileme işlemini yapar,
+        belirteçleri ya da Drive içeriğini saklamaz ve kaydetmez.</p>
+      <p><strong>Google API'lerinden alınan bilgilerin kullanımı ve aktarımı, Sınırlı Kullanım (Limited Use) gereklilikleri
+        dahil <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Hizmetleri Kullanıcı
+        Verileri Politikası</a>'na uygundur.</strong> Google'dan alınan veriler yalnızca yukarıda anlatılan özellikler için
+        kullanılır; satılmaz, reklam için kullanılmaz, başkalarıyla paylaşılmaz ve yapay zekâ modeli eğitmek için
+        kullanılmaz. Hiçbir kişi Drive dosyalarını okumaz.</p>
+
+      <h2>3. Bilgisayarında kalan veriler</h2>
+      <ul>
+        <li>Videoların, projelerin (<code>.vcsproj</code>), dışa aktarılan videolar ve uygulama ayarları bilgisayarında
+          saklanır.</li>
+        <li>Altyazı çıkarma (konuşma tanıma) ve çeviri bilgisayarında, yerel yapay zekâ modelleriyle yapılır; ses ve
+          videoların bunun için bir sunucuya gönderilmez. Modeller ilk kullanımda internetten (Hugging Face) indirilir.</li>
+        <li>Bağlantıyla video içe aktarırken uygulama, verdiğin adresteki siteye (ör. video platformu) doğrudan bağlanır.
+          İsteğe bağlı Twitch bağlantısı yalnızca kendi kanalının kliplerini Twitch'in resmî API'siyle indirmek içindir.</li>
+      </ul>
+
+      <h2>4. Analiz, reklam ve paylaşım</h2>
+      <p>Uygulama reklam göstermez, kullanım analizi / izleme (telemetry) yapmaz ve kişisel verilerini satmaz. Verilerin
+        yalnızca hizmeti sağlamak için kullanılan altyapı sağlayıcılarında (Supabase; Google ile girdiysen Google) işlenir.</p>
+
+      <h2>5. Saklama süresi ve silme</h2>
+      <ul>
+        <li><strong>Çıkış yap</strong>: bilgisayarındaki oturum ve Google Drive belirteçleri silinir ve uygulamanın Google
+          Drive izni Google'da geri alınır. Drive'ındaki proje dosyaların silinmez; istediğin zaman Drive'dan kendin
+          silebilirsin.</li>
+        <li>Uygulamanın Google erişimini her zaman <a href="https://myaccount.google.com/permissions">Google hesap
+          izinlerinden</a> de kaldırabilirsin.</li>
+        <li>Hesabının ve hesap bilgilerinin tamamen silinmesini istersen
+          <a href="mailto:anaktandeniz07@gmail.com">anaktandeniz07@gmail.com</a> adresine yaz; kayıtlı e-posta adresinden
+          gelen talepler en geç 30 gün içinde yerine getirilir. Uygulamanın önceki bir sürümünde "buluta kaydet" ile
+          kaydedilmiş proje verileri varsa onlar da silinir.</li>
+      </ul>
+
+      <h2>6. Güvenlik</h2>
+      <p>Hesap sunucusuyla bağlantılar şifrelidir (HTTPS). Oturum ve Google belirteçleri bilgisayarında işletim sisteminin
+        anahtar deposuyla şifrelenir; şifreleme olmayan sistemlerde diske yazılmaz. Veritabanında her kullanıcı yalnızca
+        kendi kayıtlarına erişebilir.</p>
+
+      <h2>7. Çocuklar</h2>
+      <p>Uygulama 13 yaşından küçük çocuklara yönelik değildir ve bilerek onlardan kişisel veri toplamaz.</p>
+
+      <h2>8. Değişiklikler ve iletişim</h2>
+      <p>Bu politika değişirse bu sayfa güncellenir ve yürürlük tarihi değişir. Sorular için:
+        <a href="mailto:anaktandeniz07@gmail.com">anaktandeniz07@gmail.com</a></p>
+    </section>
+
+    <hr />
+
+    <section id="en" lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="muted">Effective date: October 13, 2026</p>
+      <p>This policy explains what information the Vertical Clip Studio desktop app ("the app") processes and how. The app
+        is a video editor; your videos, projects and editing happen on your computer.</p>
+
+      <h2>1. Account information</h2>
+      <p>You need an account to use the app. The account service runs on <strong>Supabase</strong> (authentication and
+        database infrastructure). It stores:</p>
+      <ul>
+        <li>Your email address; if you signed in with Google, the name and profile photo URL of your Google account.</li>
+        <li>If you signed up with email and password, your password — stored by Supabase only in a non-reversible (hashed)
+          form; neither the app nor the developer can see it.</li>
+        <li>When your account was created and how you sign in (email or Google).</li>
+      </ul>
+      <p>Your session is stored on your computer, encrypted with your operating system's key store.</p>
+
+      <h2>2. Google Sign-In and Google Drive</h2>
+      <p>When you sign in with Google, the app requests these permissions:</p>
+      <ul>
+        <li><strong>Basic profile and email</strong> (<code>openid</code>, <code>email</code>, <code>profile</code>): to
+          create your account and identify you.</li>
+        <li><strong>Google Drive – only files used with this app</strong> (<code>drive.file</code>): to save your projects
+          to your Drive and open them on other computers. With this permission the app can <strong>only</strong> see, read,
+          update and move to trash <strong>the files it created</strong> (the <code>.vcsproj</code> project files in the
+          "Vertical Clip Studio" folder of your Drive). It cannot access any other files in your Drive.</li>
+      </ul>
+      <p>Only the <strong>project file</strong> (timeline, captions, settings and the paths of your videos on your
+        computer) is uploaded to Drive. <strong>Your video and audio files are not uploaded to Drive or to any other
+        server.</strong></p>
+      <p>The access tokens issued by Google are stored on your computer, encrypted with your operating system's key store.
+        Access is renewed roughly every hour; the renewal goes through a Supabase server function so that the app key
+        required by Google is not shipped on your computer. That function only performs the renewal; it does not store or
+        log tokens or Drive content.</p>
+      <p><strong>Vertical Clip Studio's use and transfer to any other app of information received from Google APIs will
+        adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
+        Data Policy</a>, including the Limited Use requirements.</strong> Data received from Google is used only for the
+        features described above; it is not sold, not used for advertising, not shared with others and not used to train
+        AI models. No person reads your Drive files.</p>
+
+      <h2>3. Data that stays on your computer</h2>
+      <ul>
+        <li>Your videos, projects (<code>.vcsproj</code>), exported videos and app settings are stored on your computer.</li>
+        <li>Caption generation (speech recognition) and translation run on your computer with local AI models; your audio
+          and video are not sent to a server for this. The models are downloaded from the internet (Hugging Face) on first
+          use.</li>
+        <li>When you import a video from a link, the app connects directly to the site at that address (e.g. a video
+          platform). The optional Twitch connection is only used to download clips of your own channel via Twitch's
+          official API.</li>
+      </ul>
+
+      <h2>4. Analytics, advertising and sharing</h2>
+      <p>The app shows no ads, does no usage analytics or tracking (telemetry) and does not sell your personal data. Your
+        data is processed only by the infrastructure providers used to deliver the service (Supabase; and Google if you
+        sign in with Google).</p>
+
+      <h2>5. Retention and deletion</h2>
+      <ul>
+        <li><strong>Sign out</strong>: the session and Google Drive tokens on your computer are deleted and the app's Google
+          Drive permission is revoked at Google. Your project files in Drive are not deleted; you can delete them from
+          Drive yourself at any time.</li>
+        <li>You can also remove the app's access at any time in your <a href="https://myaccount.google.com/permissions">Google
+          account permissions</a>.</li>
+        <li>To have your account and account information deleted completely, write to
+          <a href="mailto:anaktandeniz07@gmail.com">anaktandeniz07@gmail.com</a>; requests from the registered email address
+          are completed within 30 days. Any project data saved with "save to cloud" in an earlier version of the app is
+          deleted as well.</li>
+      </ul>
+
+      <h2>6. Security</h2>
+      <p>Connections to the account server are encrypted (HTTPS). Session and Google tokens are encrypted on your computer
+        with the operating system's key store and are not written to disk on systems without one. In the database each
+        user can access only their own records.</p>
+
+      <h2>7. Children</h2>
+      <p>The app is not directed at children under 13 and does not knowingly collect personal data from them.</p>
+
+      <h2>8. Changes and contact</h2>
+      <p>If this policy changes, this page is updated along with its effective date. Questions:
+        <a href="mailto:anaktandeniz07@gmail.com">anaktandeniz07@gmail.com</a></p>
+    </section>
+
+    <footer><a href="./">Ana sayfa / Home</a><a href="terms.html">Koşullar / Terms</a></footer>
+  </div>
+</body>
+</html>
