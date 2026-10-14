@@ -30,6 +30,8 @@
         <li>E-posta ve şifreyle kayıt olduysan şifren; şifre Supabase tarafından yalnızca geri döndürülemez biçimde (hash)
           saklanır, uygulama ve geliştirici şifreni göremez.</li>
         <li>Hesabın oluşturulma tarihi ve giriş yöntemi (e-posta ya da Google).</li>
+        <li>Uygulama tercihlerin (tema, vurgu rengi, kısayollar, altyazı ve dışa aktarma varsayılanları gibi), başka
+          bilgisayarda aynı hesapla girince de geçerli olsun diye. Klasör yolları ve proje adları bu tercihlere dahil değildir.</li>
       </ul>
       <p>Oturum bilgisi bilgisayarında, işletim sisteminin anahtar deposuyla şifrelenmiş olarak saklanır.</p>
 
@@ -58,8 +60,9 @@
 
       <h2>3. Bilgisayarında kalan veriler</h2>
       <ul>
-        <li>Videoların, projelerin (<code>.vcsproj</code>), dışa aktarılan videolar ve uygulama ayarları bilgisayarında
-          saklanır.</li>
+        <li>Videoların, projelerin (<code>.vcsproj</code>), dışa aktarılan videolar, kurtarma kopyaları ve uygulama ayarları
+          bilgisayarında saklanır. Aynı bilgisayarda birden çok hesap kullanılırsa her hesabın verisi ayrı tutulur; bir
+          hesap diğerinin projelerini, kurtarma kopyalarını ya da ayarlarını göremez.</li>
         <li>Altyazı çıkarma (konuşma tanıma) ve çeviri bilgisayarında, yerel yapay zekâ modelleriyle yapılır; ses ve
           videoların bunun için bir sunucuya gönderilmez. Modeller ilk kullanımda internetten (Hugging Face) indirilir.</li>
         <li>Bağlantıyla video içe aktarırken uygulama, verdiğin adresteki siteye (ör. video platformu) doğrudan bağlanır.
@@ -112,6 +115,8 @@
         <li>If you signed up with email and password, your password — stored by Supabase only in a non-reversible (hashed)
           form; neither the app nor the developer can see it.</li>
         <li>When your account was created and how you sign in (email or Google).</li>
+        <li>Your app preferences (such as theme, accent color, shortcuts, caption and export defaults), so they also apply
+          when you sign in with the same account on another computer. Folder paths and project names are not included.</li>
       </ul>
       <p>Your session is stored on your computer, encrypted with your operating system's key store.</p>
 
@@ -140,7 +145,9 @@
 
       <h2>3. Data that stays on your computer</h2>
       <ul>
-        <li>Your videos, projects (<code>.vcsproj</code>), exported videos and app settings are stored on your computer.</li>
+        <li>Your videos, projects (<code>.vcsproj</code>), exported videos, recovery copies and app settings are stored on
+          your computer. If several accounts are used on the same computer, each account's data is kept separately; one
+          account cannot see another account's projects, recovery copies or settings.</li>
         <li>Caption generation (speech recognition) and translation run on your computer with local AI models; your audio
           and video are not sent to a server for this. The models are downloaded from the internet (Hugging Face) on first
           use.</li>
